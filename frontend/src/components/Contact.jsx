@@ -126,11 +126,11 @@ const Contact = () => {
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
                     <span className="text-gray-400 text-sm">Email</span>
-                    <span className="text-[#39FF14] font-semibold">< 24 hours</span>
+                    <span className="text-[#39FF14] font-semibold">&lt; 24 hours</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-400 text-sm">Phone/WhatsApp</span>
-                    <span className="text-[#39FF14] font-semibold">< 2 hours</span>
+                    <span className="text-[#39FF14] font-semibold">&lt; 2 hours</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-400 text-sm">Consultation</span>
