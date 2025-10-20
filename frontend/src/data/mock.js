@@ -93,21 +93,54 @@ export const services = [
 export const projects = [
   {
     id: 1,
-    title: "TechRooot AI Platform",
-    category: "EdTech",
-    description: "Revolutionary EdTech platform training 1,500+ students in AI/ML and web development. Features comprehensive learning management system with AI-powered personalized learning paths.",
+    title: "AutomateX Workflow Builder",
+    category: "AI Automation",
+    description: "Enterprise-grade automation platform using N8N and custom AI models. Automates complex business workflows including data entry, email processing, and customer support responses.",
     metrics: {
-      students: "1,500+",
-      revenue: "$10,000+",
-      courses: "50+"
+      workflows: "200+",
+      timeSaved: "1,000+ hrs/mo",
+      accuracy: "99%"
     },
-    technologies: ["React", "Node.js", "MongoDB", "OpenAI API", "AWS"],
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop",
+    technologies: ["N8N", "OpenAI API", "Python", "MongoDB", "Webhooks"],
+    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop",
     liveLink: "#",
-    featured: true
+    featured: true,
+    tag: "automation"
   },
   {
     id: 2,
+    title: "TechRooot LMS Platform",
+    category: "EdTech",
+    description: "AI-powered learning management system training 1,500+ students in web development and AI/ML. Features personalized learning paths, automated assessments, and progress tracking.",
+    metrics: {
+      students: "1,500+",
+      courses: "50+",
+      satisfaction: "4.8/5"
+    },
+    technologies: ["React", "Node.js", "MongoDB", "OpenAI API", "Stripe"],
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop",
+    liveLink: "#",
+    featured: true,
+    tag: "training"
+  },
+  {
+    id: 3,
+    title: "GrowthMark Campaign Suite",
+    category: "Marketing",
+    description: "Automated marketing campaign manager driving 40% traffic growth. LinkedIn automation, email outreach sequences, and analytics dashboard for B2B lead generation.",
+    metrics: {
+      leads: "5,000+",
+      conversionRate: "18%",
+      growth: "+40%"
+    },
+    technologies: ["Apollo.io", "Saleshandy", "Google Analytics", "Make", "Notion"],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+    caseStudy: "#",
+    featured: true,
+    tag: "marketing"
+  },
+  {
+    id: 4,
     title: "Smart Traffic Management System",
     category: "AI/ML",
     description: "AI-driven traffic optimization system reducing congestion by 25%. Real-time traffic analysis using computer vision and machine learning algorithms.",
@@ -119,10 +152,11 @@ export const projects = [
     technologies: ["Python", "TensorFlow", "OpenCV", "Computer Vision", "IoT"],
     image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop",
     caseStudy: "#",
-    featured: true
+    featured: false,
+    tag: "development"
   },
   {
-    id: 3,
+    id: 5,
     title: "CabRoot Booking Platform",
     category: "Full-Stack",
     description: "Full-stack cab booking solution with real-time tracking, secure payment integration, and hygiene-focused features. Seamless user experience for riders and drivers.",
@@ -134,21 +168,23 @@ export const projects = [
     technologies: ["MERN Stack", "Socket.io", "Stripe API", "Google Maps API", "Redis"],
     image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&h=600&fit=crop",
     github: "#",
-    featured: true
+    featured: false,
+    tag: "development"
   },
   {
-    id: 4,
-    title: "Enterprise E-commerce Platform",
-    category: "Full-Stack",
-    description: "Multi-vendor marketplace with AI-powered product recommendations, advanced analytics dashboard, and seamless payment integration.",
+    id: 6,
+    title: "AI Content Generation Engine",
+    category: "AI Automation",
+    description: "Custom LLM-powered content generator for blogs, social media, and email campaigns. Reduces content creation time by 80% while maintaining brand voice.",
     metrics: {
-      vendors: "50+",
-      products: "1,000+",
-      performance: "+40%"
+      contentPieces: "10,000+",
+      timeSaved: "80%",
+      clients: "25+"
     },
-    technologies: ["Next.js", "MongoDB", "AWS", "Stripe", "AI Recommendations"],
-    image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&h=600&fit=crop",
-    featured: false
+    technologies: ["OpenAI", "LangChain", "Next.js", "PostgreSQL"],
+    image: "https://images.unsplash.com/photo-1455849318743-b2233052fcff?w=800&h=600&fit=crop",
+    featured: false,
+    tag: "automation"
   }
 ];
 
