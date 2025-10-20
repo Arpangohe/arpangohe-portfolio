@@ -22,11 +22,11 @@ export const personalInfo = {
 
 export const metrics = {
   studentsTrained: 1500,
-  revenue: 2500,
+  aiAutomations: 500,
   applicationsBuilt: 20,
+  trafficGrowth: 40,
   aiAccuracy: 98,
   clientSatisfaction: 100,
-  trafficIncrease: 40,
   yearsExperience: 3
 };
 
