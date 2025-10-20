@@ -365,14 +365,57 @@ export const education = [
 ];
 
 export const techStack = [
-  { name: "React", category: "Frontend" },
-  { name: "Next.js", category: "Frontend" },
-  { name: "Node.js", category: "Backend" },
-  { name: "Python", category: "Backend" },
-  { name: "MongoDB", category: "Database" },
-  { name: "AWS", category: "Cloud" },
-  { name: "TensorFlow", category: "AI/ML" },
-  { name: "OpenAI", category: "AI/ML" },
-  { name: "Docker", category: "DevOps" },
-  { name: "Git", category: "Tools" }
+  { name: "React", category: "Frontend", icon: "⚛️" },
+  { name: "Next.js", category: "Frontend", icon: "▲" },
+  { name: "Node.js", category: "Backend", icon: "🟢" },
+  { name: "Python", category: "Backend", icon: "🐍" },
+  { name: "MongoDB", category: "Database", icon: "🍃" },
+  { name: "AWS", category: "Cloud", icon: "☁️" },
+  { name: "OpenAI", category: "AI/ML", icon: "🤖" },
+  { name: "LangChain", category: "AI/ML", icon: "🔗" },
+  { name: "Zapier", category: "Automation", icon: "⚡" },
+  { name: "N8N", category: "Automation", icon: "🔄" },
+  { name: "Make", category: "Automation", icon: "🛠️" },
+  { name: "Apollo.io", category: "Marketing", icon: "🎯" },
+  { name: "Google Ads", category: "Marketing", icon: "📊" },
+  { name: "LinkedIn", category: "Marketing", icon: "💼" }
 ];
+
+export const faqs = [
+  {
+    id: 1,
+    question: "What AI automation services do you offer?",
+    answer: "I specialize in custom workflow automations using tools like Zapier, Make, and N8N. This includes email automation, data processing, chatbot setups, document extraction, lead generation workflows, and integration of AI models (OpenAI, LangChain) into existing business processes. I've delivered 500+ automation workflows saving clients 1,000+ hours monthly."
+  },
+  {
+    id: 2,
+    question: "How do you drive 40% traffic growth for clients?",
+    answer: "Through a data-driven approach combining SEO optimization, LinkedIn growth hacking, email outreach campaigns, and performance marketing. I use tools like Apollo.io for B2B lead generation, Saleshandy for email sequences, and Google Analytics for conversion tracking. Results include 18% conversion rates and 5,000+ qualified leads generated."
+  },
+  {
+    id: 3,
+    question: "What's your development process?",
+    answer: "I follow an agile approach: 1) Discovery call to understand requirements, 2) Detailed proposal with timeline & budget, 3) Weekly sprint updates with demos, 4) Iterative feedback implementation, 5) Testing & QA, 6) Deployment & post-launch support. I specialize in MERN stack, Next.js, and AI-integrated web applications."
+  },
+  {
+    id: 4,
+    question: "How can I book a workshop or training session?",
+    answer: "I offer hands-on workshops on Python, AI/ML, Web Development, and Digital Marketing for both individuals and corporate teams. Training can be customized based on skill level (beginner to advanced). Contact me via email (arpangohework@gmail.com) or WhatsApp (+91-896-242-7126) with your requirements, and I'll send you a tailored proposal with dates and pricing."
+  },
+  {
+    id: 5,
+    question: "What's included in your pricing?",
+    answer: "Hourly rates: AI Automation ($60/hr), Full-Stack Dev ($50/hr), Marketing ($40/hr), Training ($45/hr). All projects include: requirement analysis, development/implementation, testing, documentation, and 30 days post-launch support. Custom project pricing available based on scope. Upfront estimates provided after discovery call."
+  },
+  {
+    id: 6,
+    question: "Do you work remotely or require on-site presence?",
+    answer: "I work 100% remotely and have successfully delivered projects for clients across India and globally. All communication via Zoom/Google Meet, project management through Notion/Trello, and code collaboration via GitHub. However, I'm open to on-site visits for critical phases or training sessions if required (travel expenses additional)."
+  }
+];
+
+export const resumeLinks = {
+  ai: "/resumes/Arpan_Gohe_AI_Automation_Resume.pdf",
+  fullstack: "/resumes/Arpan_Gohe_Full_Stack_Developer_Resume.pdf",
+  marketing: "/resumes/Arpan_Gohe_Marketing_Expert_Resume.pdf"
+};
