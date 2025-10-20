@@ -2,7 +2,7 @@
 
 export const personalInfo = {
   name: "Arpan Gohe",
-  title: "AI Strategist • Full-Stack Developer • EdTech Entrepreneur",
+  title: "AI Automation • Growth Marketing • Full-Stack Development",
   email: "arpangohework@gmail.com",
   phone: "+91-8962427126",
   whatsapp: "918962427126",
@@ -11,8 +11,13 @@ export const personalInfo = {
   github: "https://github.com/Arpangohe",
   instagram: "https://instagram.com/arpangohe",
   youtube: "https://youtube.com/@arpangohe",
-  tagline: "Transforming Ideas into Intelligent Solutions",
-  bio: "Entrepreneurial technologist with 3+ years of experience specializing in AI/ML training, data annotation, and full-stack development. Founder of TechRooot Technology, serving 500+ students in AI and web development."
+  taglines: [
+    "Automating Business Workflows with AI",
+    "Driving 40% Traffic Growth Through Data",
+    "Building Intelligent Web Applications",
+    "Training 1,500+ Future Tech Leaders"
+  ],
+  bio: "AI Automation Specialist & Growth Marketer with 3+ years delivering custom LLM solutions, workflow automations, and high-performance marketing campaigns. Founder of TechRooot Technology, serving 1,500+ students."
 };
 
 export const metrics = {
