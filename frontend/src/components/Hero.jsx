@@ -1,28 +1,42 @@
 import React, { useState, useEffect } from 'react';
-import { Brain, Code2, TrendingUp, Download, Calendar, ArrowRight, Sparkles } from 'lucide-react';
+import { Bot, Code2, TrendingUp, Download, Calendar, ArrowRight, Sparkles } from 'lucide-react';
 import { Button } from './ui/button';
 import { personalInfo, metrics } from '../data/mock';
 
 const Hero = () => {
+  const [taglineIndex, setTaglineIndex] = useState(0);
   const [typedText, setTypedText] = useState('');
-  const fullText = personalInfo.tagline;
+  const currentTagline = personalInfo.taglines[taglineIndex];
 
   useEffect(() => {
     let index = 0;
+    setTypedText('');
     const timer = setInterval(() => {
-      if (index <= fullText.length) {
-        setTypedText(fullText.slice(0, index));
+      if (index <= currentTagline.length) {
+        setTypedText(currentTagline.slice(0, index));
         index++;
       } else {
         clearInterval(timer);
+        // Wait 3 seconds then switch to next tagline
+        setTimeout(() => {
+          setTaglineIndex((prev) => (prev + 1) % personalInfo.taglines.length);
+        }, 3000);
       }
     }, 50);
     return () => clearInterval(timer);
-  }, []);
+  }, [taglineIndex, currentTagline]);
 
   const handleDownloadResume = (type) => {
-    // Mock download - will be connected to actual PDFs later
-    alert(`Downloading ${type} Resume...`);
+    const resumeUrls = {
+      'AI Automation': '/resumes/Arpan_Gohe_AI_Automation_Resume.pdf',
+      'Full-Stack Developer': '/resumes/Arpan_Gohe_Full_Stack_Developer_Resume.pdf',
+      'Marketing Expert': '/resumes/Arpan_Gohe_Marketing_Expert_Resume.pdf'
+    };
+    
+    // Create mailto link as fallback since PDFs don't exist yet
+    const subject = `Resume Request - ${type}`;
+    const body = `Hi Arpan,%0D%0A%0D%0AI would like to download your ${type} resume.%0D%0A%0D%0AThank you!`;
+    window.location.href = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
   };
 
   const handleBookConsultation = () => {
@@ -67,7 +81,7 @@ const Hero = () => {
             <div className="space-y-8">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00D4FF]/10 border border-[#00D4FF]/30 backdrop-blur-sm">
                 <Sparkles className="w-4 h-4 text-[#00D4FF]" />
-                <span className="text-sm text-[#00D4FF] font-medium">Available for Opportunities</span>
+                <span className="text-sm text-[#00D4FF] font-medium">Available for Projects</span>
               </div>
 
               <h1 className="text-5xl md:text-7xl font-bold leading-tight">
@@ -90,7 +104,7 @@ const Hero = () => {
                 </p>
               </div>
 
-              {/* Typing Effect */}
+              {/* Rotating Typing Effect */}
               <div className="h-8">
                 <p className="text-lg text-[#39FF14] font-mono">
                   {typedText}
@@ -98,23 +112,23 @@ const Hero = () => {
                 </p>
               </div>
 
-              {/* Impact Metrics */}
+              {/* Impact Metrics - Updated */}
               <div className="grid grid-cols-2 gap-4 pt-4">
                 <div className="bg-[#1F1F23]/50 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:border-[#00D4FF]/50 transition-all duration-300">
                   <p className="text-3xl font-bold text-white">{metrics.studentsTrained}+</p>
                   <p className="text-sm text-gray-400">Students Trained</p>
                 </div>
                 <div className="bg-[#1F1F23]/50 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:border-[#39FF14]/50 transition-all duration-300">
-                  <p className="text-3xl font-bold text-white">{metrics.applicationsBuilt}+</p>
-                  <p className="text-sm text-gray-400">Applications Built</p>
+                  <p className="text-3xl font-bold text-white">{metrics.aiAutomations}+</p>
+                  <p className="text-sm text-gray-400">AI Automations</p>
                 </div>
                 <div className="bg-[#1F1F23]/50 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:border-[#00D4FF]/50 transition-all duration-300">
-                  <p className="text-3xl font-bold text-white">{metrics.yearsExperience}+</p>
-                  <p className="text-sm text-gray-400">Years Experience</p>
+                  <p className="text-3xl font-bold text-white">{metrics.applicationsBuilt}+</p>
+                  <p className="text-sm text-gray-400">Web Apps Built</p>
                 </div>
                 <div className="bg-[#1F1F23]/50 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:border-[#39FF14]/50 transition-all duration-300">
-                  <p className="text-3xl font-bold text-white">{metrics.aiAccuracy}%</p>
-                  <p className="text-sm text-gray-400">AI Accuracy</p>
+                  <p className="text-3xl font-bold text-white">{metrics.trafficGrowth}%</p>
+                  <p className="text-sm text-gray-400">Traffic Growth</p>
                 </div>
               </div>
 
@@ -137,14 +151,14 @@ const Hero = () => {
                 </Button>
               </div>
 
-              {/* Resume Download */}
+              {/* Resume Download - Updated */}
               <div className="flex flex-wrap gap-3 pt-2">
                 <button
-                  onClick={() => handleDownloadResume('AI Specialist')}
+                  onClick={() => handleDownloadResume('AI Automation')}
                   className="text-sm text-gray-400 hover:text-[#00D4FF] transition-colors flex items-center gap-2"
                 >
                   <Download className="w-4 h-4" />
-                  AI Specialist Resume
+                  AI Automation Resume
                 </button>
                 <span className="text-gray-600">|</span>
                 <button
@@ -153,6 +167,14 @@ const Hero = () => {
                 >
                   <Download className="w-4 h-4" />
                   Full-Stack Resume
+                </button>
+                <span className="text-gray-600">|</span>
+                <button
+                  onClick={() => handleDownloadResume('Marketing Expert')}
+                  className="text-sm text-gray-400 hover:text-[#00D4FF] transition-colors flex items-center gap-2"
+                >
+                  <Download className="w-4 h-4" />
+                  Marketing Resume
                 </button>
               </div>
             </div>
@@ -191,7 +213,7 @@ const Hero = () => {
                       </div>
                       <div className="space-y-2">
                         <div className="flex justify-center gap-4">
-                          <Brain className="w-8 h-8 text-[#00D4FF]" />
+                          <Bot className="w-8 h-8 text-[#00D4FF]" />
                           <Code2 className="w-8 h-8 text-[#39FF14]" />
                           <TrendingUp className="w-8 h-8 text-[#00D4FF]" />
                         </div>
@@ -201,7 +223,7 @@ const Hero = () => {
                   
                   {/* Floating Icons */}
                   <div className="absolute top-8 right-8 w-12 h-12 rounded-lg bg-[#00D4FF]/10 backdrop-blur-sm border border-[#00D4FF]/30 flex items-center justify-center animate-bounce" style={{ animationDuration: '3s' }}>
-                    <Brain className="w-6 h-6 text-[#00D4FF]" />
+                    <Bot className="w-6 h-6 text-[#00D4FF]" />
                   </div>
                   <div className="absolute bottom-8 left-8 w-12 h-12 rounded-lg bg-[#39FF14]/10 backdrop-blur-sm border border-[#39FF14]/30 flex items-center justify-center animate-bounce" style={{ animationDuration: '2.5s', animationDelay: '0.5s' }}>
                     <Code2 className="w-6 h-6 text-[#39FF14]" />
