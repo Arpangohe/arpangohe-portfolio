@@ -7,7 +7,7 @@ logger = logging.getLogger(__name__)
 
 class ChatbotService:
     def __init__(self):
-        self.client = OpenAI(api_key=os.environ.get('OPENAI_API_KEY'))
+        self.client = None
         self.system_prompt = """You are Arpan Gohe's AI assistant on his portfolio website. You help visitors learn about Arpan's services and expertise.
 
 ABOUT ARPAN:
@@ -57,9 +57,23 @@ When asked about availability, say: "Arpan is currently accepting new projects. 
 
 Be professional, friendly, and concise. Keep responses under 100 words unless asked for detailed explanations. If asked technical questions beyond this scope, suggest contacting Arpan directly. Always encourage visitors to fill out the contact form or book a call."""
 
+    def _get_client(self):
+        """Lazy initialization of OpenAI client"""
+        if self.client is None:
+            api_key = os.environ.get('OPENAI_API_KEY')
+            if api_key:
+                self.client = OpenAI(api_key=api_key)
+            else:
+                logger.warning("OpenAI API key not found")
+        return self.client
+
     async def get_response(self, user_message: str, conversation_history: List[Dict] = None) -> str:
         """Get AI chatbot response using OpenAI"""
         try:
+            client = self._get_client()
+            if not client:
+                return "I apologize, but I'm having trouble processing your request right now. Please try contacting Arpan directly at arpangohework@gmail.com or +91-896-242-7126."
+            
             messages = [{"role": "system", "content": self.system_prompt}]
             
             # Add conversation history if provided
@@ -70,7 +84,7 @@ Be professional, friendly, and concise. Keep responses under 100 words unless as
             messages.append({"role": "user", "content": user_message})
             
             # Get response from OpenAI
-            response = self.client.chat.completions.create(
+            response = client.chat.completions.create(
                 model="gpt-4o-mini",
                 messages=messages,
                 max_tokens=200,
