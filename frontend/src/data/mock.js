@@ -33,45 +33,60 @@ export const metrics = {
 export const services = [
   {
     id: 1,
-    icon: "Brain",
-    title: "AI & Automation Solutions",
-    description: "Transform your business with cutting-edge artificial intelligence and automation technologies.",
+    icon: "Bot",
+    title: "AI Automation & LLM Solutions",
+    description: "Custom workflow automations and intelligent AI systems that eliminate repetitive tasks and boost productivity.",
     features: [
-      "LLM Training & Prompt Engineering",
-      "Custom AI Model Development",
-      "Data Annotation & Quality Assurance",
-      "AI-Powered Business Automation"
+      "Custom workflow automations (Zapier, Make, N8N)",
+      "LLM prompt engineering & fine-tuning",
+      "Chatbot & virtual assistant setups",
+      "AI-powered document processing"
     ],
-    price: "$50/hour",
-    accentColor: "#00D4FF"
+    price: "$60/hour",
+    accentColor: "#00D4FF",
+    badge: "Most Popular"
   },
   {
     id: 2,
     icon: "Code2",
     title: "Full-Stack Development",
-    description: "Build scalable, high-performance web applications with modern technologies.",
+    description: "Build scalable, high-performance web applications with modern technologies and AI integration.",
     features: [
-      "MERN Stack Applications",
-      "Next.js Enterprise Solutions",
-      "AI-Integrated Web Platforms",
+      "MERN & Next.js applications",
+      "AI-integrated web platforms",
+      "API & microservice architecture",
       "E-commerce & SaaS Development"
     ],
-    price: "$40/hour",
+    price: "$50/hour",
     accentColor: "#39FF14"
   },
   {
     id: 3,
     icon: "TrendingUp",
-    title: "Digital Marketing & Growth",
-    description: "Scale your online presence with data-driven marketing strategies.",
+    title: "Digital Marketing & Growth Hacking",
+    description: "Data-driven marketing strategies that deliver measurable results and sustainable growth.",
     features: [
-      "LinkedIn Growth Hacking",
-      "SEO & Performance Marketing",
-      "Personal Branding for CEOs",
-      "Content Strategy & Automation"
+      "LinkedIn automation & personal branding",
+      "SEO, SEM & performance campaigns",
+      "Email outreach & lead generation (Apollo.io, Saleshandy)",
+      "Content strategy & marketing automation"
     ],
-    price: "$35/hour",
+    price: "$40/hour",
     accentColor: "#00D4FF"
+  },
+  {
+    id: 4,
+    icon: "GraduationCap",
+    title: "EdTech Workshops & Training",
+    description: "Hands-on technical training programs designed to upskill teams and individuals.",
+    features: [
+      "Python, AI/ML & Web development workshops",
+      "Corporate training & seminar hosting",
+      "Curriculum design & content strategy",
+      "Bootcamps & hackathon mentorship"
+    ],
+    price: "$45/hour",
+    accentColor: "#39FF14"
   }
 ];
 
